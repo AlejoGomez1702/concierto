@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Confirmación</h1>
+<div mat-dialog-content>
+    <p>
+      ¿Para que día te gustaría comprar tu boleta?
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="emitirCompra(1)">Primer día</button>
+    <button mat-button (click)="emitirCompra(2)" cdkFocusInitial>Segundo día</button>
+</div>

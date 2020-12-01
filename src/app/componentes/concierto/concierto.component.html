@@ -1,0 +1,65 @@
+<ng-container>
+    <mat-card style="width: 45%; display: inline-block; margin-left: 10px;">
+        <mat-card-header>
+          <mat-card-title>Función {{ conciertos[0].dia }}</mat-card-title>
+          <mat-card-subtitle>{{ conciertos[0].dia }} Dia</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="example-form" ngNoForm>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nombre:</mat-label>
+                  <input matInput [(ngModel)]="conciertos[0].nombre" [name]="conciertos[0].nombre" >
+                </mat-form-field>
+    
+                <mat-form-field class="example-full-width">
+                    <mat-label>Descripción:</mat-label>
+                    <textarea matInput [(ngModel)]="conciertos[0].descripcion" [name]="conciertos[0].descripcion" [value]="conciertos[0].descripcion"></textarea>
+                </mat-form-field>          
+
+                <ng-container *ngIf="conciertos[0].dia == 2">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Descuento:</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                </ng-container>
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="guardarDatos(0)">GUARDAR</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-container>
+
+<ng-container>
+    <mat-card style="width: 45%; display: inline-block; margin-left: 10px;">
+        <mat-card-header>
+          <mat-card-title>Función {{ conciertos[1].dia }}</mat-card-title>
+          <mat-card-subtitle>{{ conciertos[1].dia }} Dia</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="example-form" ngNoForm>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nombre:</mat-label>
+                  <input matInput [(ngModel)]="conciertos[1].nombre" [name]="conciertos[1].nombre" >
+                </mat-form-field>
+    
+                <mat-form-field class="example-full-width">
+                    <mat-label>Descripción:</mat-label>
+                    <textarea matInput [(ngModel)]="conciertos[1].descripcion" [name]="conciertos[1].descripcion" [value]="conciertos[1].descripcion"></textarea>
+                </mat-form-field>          
+
+                <ng-container *ngIf="conciertos[1].dia == 2">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Descuento:</mat-label>
+                        <input type="number" matInput [(ngModel)]="conciertos[1].descuento" [name]="conciertos[1].descuento">
+                    </mat-form-field>
+                </ng-container>
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="guardarDatos(1)">GUARDAR</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-container>

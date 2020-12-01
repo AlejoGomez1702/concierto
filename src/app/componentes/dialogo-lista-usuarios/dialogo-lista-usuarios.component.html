@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Seleccione el cliente:</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+    <mat-label>Busque por cédula</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let cedula of cedulas" [value]="cedula" (click)="seleccionarCedula(cedula)">
+        {{cedula}}
+        </mat-option>
+    </mat-select>
+    </mat-form-field>
+    <!-- <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente.cedula">
+          {{cliente.cedula + ' ' + cliente.nombres + ' ' + cliente.apellidos}}
+        </mat-option>
+    </mat-autocomplete> -->
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="crearCliente()">Crear nuevo</button>
+    <button mat-button (click)="guardarCliente()" cdkFocusInitial>Aceptar</button>
+</div>

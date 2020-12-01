@@ -1,0 +1,22 @@
+.oriental
+{
+    float: right; 
+    position: relative; 
+    margin-right: 225px;
+    /* right: 100%; */
+    /* right: 1000px; */
+}
+
+.grid-container 
+{
+    display: grid;
+    grid-template-columns: 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px 65px;
+    /* padding: 10px; */
+}
+
+.grid-container-occ 
+{
+    display: grid;
+    grid-template-columns: 100%;
+    /* padding: 10px; */
+}

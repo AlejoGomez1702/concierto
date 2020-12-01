@@ -1,0 +1,81 @@
+<mat-grid-list cols="6" rowHeight="100px" >
+    <!-- Grada NORTE -->
+    <mat-grid-tile [colspan]="gradaNorte.columnas" [rowspan]="gradaNorte.rows"  [style.background]="gradaNorte.color">
+      {{gradaNorte.text}}
+
+      <div class="grid-container">
+        <ng-container *ngFor="let asiento of asientos">
+          <ng-container *ngIf="asiento.ubicacion == 'norte'">
+            <button             
+                (click)="escojerCompra(asiento)" 
+                mat-raised-button 
+                [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
+                class="grid-item">
+                N{{ (asiento.indice + 1) }}
+            </button>
+          </ng-container>
+        </ng-container>
+      </div>
+
+    </mat-grid-tile>
+    <!-- Grada OCCIDENTAL-->
+    <mat-grid-tile [colspan]="gradaOccidental.columnas" [rowspan]="gradaOccidental.rows"  [style.background]="gradaOccidental.color">
+      {{gradaOccidental.text}} VIP
+
+      <div class="grid-container-occ">
+        <ng-container *ngFor="let asiento of asientos">
+          <ng-container *ngIf="asiento.ubicacion == 'occidente'">
+            <button      
+                (click)="escojerCompra(asiento)"       
+                mat-raised-button 
+                [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
+                class="grid-item">
+                OC{{ (asiento.indice + 1) }}
+            </button>
+          </ng-container>
+        </ng-container>
+      </div>
+
+    </mat-grid-tile>
+
+    
+    <!-- Grada ORIENTAL -->
+    <mat-grid-tile [colspan]="gradaOriental.columnas" [rowspan]="gradaOriental.rows"  [style.background]="gradaOriental.color" class="oriental">
+      {{gradaOriental.text}} VIP
+
+      <div class="grid-container-occ">
+        <ng-container *ngFor="let asiento of asientos">
+          <ng-container *ngIf="asiento.ubicacion == 'oriente'">
+            <button             
+                (click)="escojerCompra(asiento)" 
+                mat-raised-button 
+                [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
+                class="grid-item">
+                OR{{ (asiento.indice + 1) }}
+            </button>
+          </ng-container>
+        </ng-container>
+      </div>
+
+    </mat-grid-tile>
+    <!-- Grada SUR -->
+    <mat-grid-tile [colspan]="gradaSur.columnas" [rowspan]="gradaSur.rows"  [style.background]="gradaSur.color">
+      {{gradaSur.text}}
+
+      <div class="grid-container">
+        <ng-container *ngFor="let asiento of asientos">
+          <ng-container *ngIf="asiento.ubicacion == 'sur'">
+            <button          
+                (click)="escojerCompra(asiento)"    
+                mat-raised-button 
+                [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
+                class="grid-item">
+                S{{ (asiento.indice + 1) }}
+            </button>
+          </ng-container>
+        </ng-container>
+      </div>
+
+    </mat-grid-tile>
+  
+</mat-grid-list>
